@@ -13,7 +13,7 @@ def hello():
 def marks():
     if request.method == 'POST':
         hours = float(request.form['hours'])
-        marks = str(model.predict([[hours]])[0][0])
+        marks = str("{:.2f}".format(model.predict([[hours]])[0][0])) 
     return render_template("index.html",your_marks=marks)
 
 
